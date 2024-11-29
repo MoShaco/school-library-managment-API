@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'djoser',
     'Books'
 ]
 
@@ -129,4 +130,18 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+     ),
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "username",
+    "USER_CREATE_PASSWORD_RETYPE": True,
+
+    # "SERIALIZERS": {
+    #     'user_create': ''
+    # }
+
 }
