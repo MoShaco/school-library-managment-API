@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Books',
     'rest_framework',
-    'djoser',
-    'Books'
+    'djoser'
 ]
 
 MIDDLEWARE = [
@@ -138,10 +138,10 @@ REST_FRAMEWORK = {
 
 DJOSER = {
     "USER_ID_FIELD": "username",
-    "USER_CREATE_PASSWORD_RETYPE": True,
+    # "USER_CREATE_PASSWORD_RETYPE": True,
 
-    # "SERIALIZERS": {
-    #     'user_create': ''
-    # }
+    "SERIALIZERS": {
+        'user_create': 'Books.serializers.UserCreateSerializer', 
+    }
 
 }
